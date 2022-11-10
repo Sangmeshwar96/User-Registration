@@ -22,5 +22,21 @@ namespace UserRegistrationUsingRegex
                 Console.WriteLine(e.Message);
             }
         }
+
+        public void CheckLastName(string lastname)
+        {
+           string validateLastName = "^[A-Z][a-z]{3,20}$";
+            try
+            {
+                if (Regex.IsMatch(lastname, validateLastName))
+                    Console.WriteLine("Last Name saved succesfull");
+                else
+                    Console.WriteLine("Invalid name!!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
     }
 }
